@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["env"]
+  ],
+  "plugins": ["transform-runtime"],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env"],
+      "plugins": [ "istanbul" ]
+    }
+  }
+}
