@@ -4,7 +4,7 @@ const MiniMsg = function(ops) {
         content: '',
         type: 'info',
         container: document.body,
-        duration: 2,
+        duration: 1,
         top: 16
     };
 
@@ -112,7 +112,7 @@ MiniMsg.prototype = {
 
 MiniMsg.install = function(Vue) {
     Vue.prototype.$minimsg = function(options, callback) {
-        new MiniMsg(options).animation(() => {
+        return new MiniMsg(options).animation(() => {
             if (typeof callback === 'function') {
                 callback();
             }

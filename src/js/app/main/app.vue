@@ -16,7 +16,7 @@
                 this.$minimsg({
                     content: '操作提示，将为您刷新页面...',
                     type: 'info',
-                    duration: 2
+                    duration: 1
                 });
             },
             success(){
