@@ -4,7 +4,7 @@
 
 ## 组件示例图
 
-![img]()
+![img](https://github.com/ct-adc/ct-adc-mini-msg/blob/dev/minimsg.png)
 
 ## 在线demo
 
@@ -36,11 +36,11 @@ new MiniMsg(options).animation();
 
 参数 | 说明 | 类型 | 默认值 | 可选值 | 描述 |
 --- | --- | --- | --- | ---- | ---
-content | 提示内容 | String | '' | 必填
-type | 提示类型 | String['success'|'error'|'warning'|'info'] | 'info' | 非必填
-container | 承载信息框的外层容器 | DOM | body |非必填
-duration | 信息框的停留时长，单位:秒 | Number | 1 | 非必填
-top | 信息框容器顶部的最大高度 | Number | 16 | 非必填
+content | 提示内容 | String | '' | 字符串（支持html渲染）|
+type | 提示类型 | String | 'info' | success/error/warning/info | 
+container | 承载信息框的外层容器 | DOM | body | DOM元素 |
+duration | 信息框的停留时长，单位:秒 | Number | 1 | 数字 |
+top | 信息框容器顶部的最大高度 | Number | 16 | 数字 |
 
 ## this.$minimsg
 
@@ -85,9 +85,9 @@ undefined
 
 ## 更新日志
 
-[更新日志]({CHANGELOG.md的线上地址})
+[更新日志](https://github.com/ct-adc/ct-adc-mini-msg/blob/dev/CHANGELOG.md)
 
 ## 外部资源依赖列表
 
-无
+jquery
 
