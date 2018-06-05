@@ -39,7 +39,8 @@ new MiniMsg(options).animation();
 content | 提示内容 | String | '' | 字符串（支持html渲染）|
 type | 提示类型 | String | 'info' | success/error/warning/info | 
 container | 承载信息框的外层容器 | DOM | body | DOM元素 |
-duration | 信息框的停留时长，单位:秒 | Number | 1 | 数字 |
+stay | 信息框的停留时长，单位:秒 | Number | 1 | 数字 |
+duration | 信息框的停留时长，单位:秒 | Number | 0.3 | 数字 |
 top | 信息框容器顶部的最大高度 | Number | 16 | 数字 |
 
 ## this.$minimsg

@@ -4,7 +4,8 @@ const MiniMsg = function(ops) {
         content: '',
         type: 'info',
         container: document.body,
-        duration: 1,
+        stay: 1,
+        duration: 0.2,
         top: 16
     };
 
@@ -32,20 +33,20 @@ MiniMsg.prototype = {
      */
     setBoxStyle: function(showOrHide) {
         const style = {};
-        let miniMsgHeight;
 
         if (showOrHide === 'show') {
-            style.top = this.top + 'px';
+            style.transform = `translateY(${this.top}px)`;
+            style.opacity = 1;
         } else {
-            miniMsgHeight = this.msgBox.find('.mini-msg-notice').outerHeight();
-            style.top = 0 - miniMsgHeight - this.top;
+            style.transform = `translateY(-100%)`;
+            style.opacity = 0;
         }
         this.msgBox.css(style);
     },
     init: function() {
         //  生成一个dom，并插入到页面中
         //  根据type设置它的样式
-        const html = `<div class="mini-msg">
+        const html = `<div class="mini-msg" style="transition: transform ${this.duration}s, opacity ${this.duration}s;">
              <div class="mini-msg-notice">
             <div class="mini-msg-notice-content ${this.classForType[this.type]}">
             <i class="glyphicon ${this.iconForType[this.type]}"></i>
@@ -94,18 +95,18 @@ MiniMsg.prototype = {
     animation: function(callback) {
         const that = this;
 
-        that.timer = setTimeout(function() {
-            that.show();
-            that.timer = setTimeout(function() {
-                that.hide();
-                that.timer = setTimeout(function() {
+        that.timer = setTimeout(()=>{
+            this.show();
+            this.timer = setTimeout(()=>{
+                this.hide();
+                this.timer = setTimeout(()=>{
                     if (typeof callback === 'function') {
                         callback();
                     }
-                    that.destroy();
-                }, 300);
-            }, 300 + 1000 * that.duration);
-        }, 300);
+                    this.destroy();
+                }, 1000 * this.duration);
+            }, 1000 * this.duration + 1000 * this.stay);
+        }, 1000 * this.duration);
         return this;
     }
 };

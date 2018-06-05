@@ -1,16 +1,16 @@
 .mini-msg {
     border-radius: 5px;
-    -webkit-transition: top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     font-size: 12px;
     position: fixed;
     z-index: 9999;
     width: 100%;
-    top: -9999px;
+    top: 0;
     left: 0;
     height: auto;
     background-color: #ccc;
     color:#fff;
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 .mini-msg-notice {

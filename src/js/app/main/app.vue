@@ -22,35 +22,36 @@
                 this.currentMiniMsg = this.$minimsg({
                     content: '操作提示，将为您刷新页面...',
                     type: 'info',
-                    duration: 1
+                    duration: 0.3,
+                    stay: 1
                 });
             },
             success(){
                 this.currentMiniMsg = this.$minimsg({
-                    content: '操作成功，将为您刷新页面...',
+                    content: '操作成功，将为您刷新页面操作成功，将为您刷新页面操作成功，将为您刷新页面操作成功，将为您刷新页面操作成功，将为您刷新页面...',
                     type: 'success',
-                    duration: 2
+                    stay: 2
                 });
             },
             error(){
                 this.currentMiniMsg = this.$minimsg({
                     content: '操作失败，将为您刷新页面...',
                     type: 'error',
-                    duration: 2
+                    stay: 2
                 });
             },
             warn(){
                 this.currentMiniMsg = this.$minimsg({
                     content: '操作警告，将为您刷新页面...',
                     type: 'warning',
-                    duration: 2
+                    stay: 2
                 });
             },
             notVuePlugin(){
                 this.currentMiniMsg = new MiniMsg({
                     content: 'notVuePlugin操作成功，将为您刷新页面...',
                     type: 'success',
-                    duration: 2
+                    stay: 2
                 }).animation();
             },
             destroy(){
